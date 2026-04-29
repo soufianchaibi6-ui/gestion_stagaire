@@ -1,0 +1,306 @@
+/* --- Tajdid l-Navbar --- */
+
+.main-nav {
+    position: fixed; /* bach tkon dima lfou9 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* abyad chwiya transparent */
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2000; /* bach tkon foug kolchi */
+    display: flex;
+    justify-content: center;
+}
+
+.nav-content {
+    display: flex;
+    gap: 20px;
+}
+
+/* Nasta3mlo l-style dial l-boutonat li 3ndek déjà */
+.nav-btn {
+    background-color: #512da8; /* Nefs l-on li f l-form */
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn a {
+    color: #fff !important; /* abyad */
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-btn:hover {
+    background-color: #3f218a;
+    transform: translateY(-2px); /* wahed l-animation sghira */
+}
+
+/* Modif sghira l-body bach l-container mayjich mghatti b l-nav */
+body {
+    padding-top: 80px; /* khali blassa l-navbar */
+}
+
+/* L-code dyalk l-ba9i khlih kima houwa... */
+/* --- Style dyal les cadres de demande --- */
+
+.requests-section {
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.section-title {
+    color: #512da8;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.requests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.request-card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.request-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 10px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.pending { background-color: #fff3cd; color: #856404; }
+.accepted { background-color: #d4edda; color: #155724; }
+
+.request-card h3 {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.specialty {
+    color: #512da8;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 13px;
+}
+
+.btn-details {
+    width: 100%;
+    background-color: transparent;
+    border: 1.5px solid #512da8;
+    color: #512da8;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-details:hover {
+    background-color: #512da8;
+    color: #fff;
+}
+
+/* Modif f l-body bach ykoun scrollable hit l-page twalt */
+body {
+    height: auto; /* bdlo mn 100vh l auto */
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+/* Wrapper l-asasi */
+.dashboard-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.dashboard-header h2 {
+    color: #512da8;
+    margin-bottom: 25px;
+    font-weight: 600;
+    border-left: 5px solid #512da8;
+    padding-left: 15px;
+}
+
+/* Container dyal les cadres */
+.cards-container {
+    display: grid;
+    /* Had l-code kakhli les cadres i3mro l-page 3la hsab l-écran */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* L-cadre (Card) */
+.stat-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(81, 45, 168, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stat-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 30px rgba(81, 45, 168, 0.15);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.badge {
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge.pending { background: #ffeaa7; color: #d63031; }
+.badge.active { background: #55efc4; color: #00b894; }
+
+.stat-card h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.role {
+    color: #512da8;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.details p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Les boutons west l-card */
+.card-footer {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-main {
+    background: #512da8;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+    font-weight: 500;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #512da8;
+    color: #512da8;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.btn-main:hover { background: #4527a0; }
+.cards-container{
+    display: flex;
+    flex-direction: column; /* كل card تحت الآخر */
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card{
+    background: white;
+    width: 60%;   /* عرض مناسب */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+.card h3{
+    margin-bottom: 10px;
+    color: #512da8;
+}
+
+.card p{
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.status{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: white;
+    background: gray;
+}
+
+/* colors */
+.status.en_attente{
+    background: orange;
+}
+
+.status.accepté{
+    background: green;
+}
+
+.status.refusé{
+    background: red;
+}
