@@ -1,0 +1,136 @@
+:root {
+    --bg-page: #f8fafc;
+    --row-bg: #ffffff;
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --border-color: #e2e8f0;
+    --success: #10b981;
+    --danger: #ef4444;
+}
+
+body {
+    background-color: var(--bg-page);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1300px; /* On élargit pour accueillir les nouvelles colonnes */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.main-nav {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+.nav-content {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.nav-btn {
+    background: var(--primary);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.nav-btn a { color: white; text-decoration: none; font-weight: 500; }
+.nav-btn:hover { background: var(--primary-hover); }
+
+/* Structure de la table (Grille) */
+/* On définit 8 colonnes : Nom(2fr), Email(1.5fr), CIN(1fr), Ville(1fr), Filière(1fr), Niveau(1fr), Type(1fr), Actions(1.5fr) */
+.list-header, .request-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 0.8fr 0.8fr 1.2fr 1fr 1fr 1.8fr;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+}
+
+.list-header {
+    background: transparent;
+    color: var(--text-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.requests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.request-row {
+    background: var(--row-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.request-row:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Cellules de données */
+.user-info h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+.status-text {
+    font-size: 0.75rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.data-cell {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    word-break: break-all; /* Pour éviter que l'email déborde */
+}
+
+/* Boutons d'actions */
+.actions-cell {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+}
+
+.btn-small {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-accept { background: #dcfce7; color: #166534; }
+.btn-refuse { background: #fee2e2; color: #991b1b; }
+.btn-details { background: #eff6ff; color: #1e40af; }
+
+.btn-small:hover { filter: contrast(1.1) brightness(0.95); }
+
+/* Pagination Fix */
+.pagination-container {
+    margin-top: 30px;
+    padding: 20px;
+}
+
+/* Masquer les icônes de pagination géantes de Bootstrap/Tailwind */
+.pagination svg {
+    width: 20px;
+}
