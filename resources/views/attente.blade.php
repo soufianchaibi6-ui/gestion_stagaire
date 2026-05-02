@@ -77,7 +77,7 @@
         <p><strong>💼 Filière :</strong> {{ $stagaire->filiere }}</p>
     </div>
 
-    <!-- STATUS -->
+    //status
     @if($stagaire->status == 'en_attente')
         <div class="status pending">⏳ Votre demande est en attente</div>
 

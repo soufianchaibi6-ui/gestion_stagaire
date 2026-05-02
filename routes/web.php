@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{Encadrement, GoogleController, LoginController, SingupController, inscriptionController};
+use App\Http\Controllers\{ChatController, Encadrement, GoogleController, LoginController, SingupController, inscriptionController};
 use Faker\Guesser\Name;
 
 Route::get("/" ,[LoginController::class, 'index'] )->name('stagair.login');
@@ -26,3 +26,6 @@ Route::get('/auth/google', [GoogleController::class, 'redirect']);
 Route::get('/auth/google/callback', [GoogleController::class, 'callback']);
 
 Route::get('/attente/{id}',[inscriptionController::class, 'attente'])->name('attente');
+
+
+Route::get('/chat' ,[ChatController::class,'chat'])->name('chat');

@@ -24,6 +24,8 @@ class inscriptionController extends Controller
             'niveau_etude'=>'required',
             'type_stage'=>'required',
             'ville'=>'required',
+            'date_debut' => 'required|date|after_or_equal:today',
+            'date_fin' => 'required|date|after:date_debut',
 
     ]);
         $stagaire = Inscription::create  ([   
