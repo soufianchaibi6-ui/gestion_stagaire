@@ -1,0 +1,117 @@
+:root {
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --bg-gradient: linear-gradient(135deg, #e9ebf1 0%, #f8f2fd 100%);
+    --text-main: #1f2937;
+    --error: #dc2626;
+}
+
+body {
+    background: var(--bg-gradient);
+    font-family: 'Inter', system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgba(221, 219, 219, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    max-width: 800px;
+    width: 100%;
+}
+
+h2 {
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+/* Organisation du formulaire en grille */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes */
+    gap: 20px;
+}
+
+/* Les champs qui doivent prendre toute la largeur (comme le bouton ou les erreurs) */
+.full-width {
+    grid-column: span 2;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+input, select {
+    padding: 12px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Style spécifique pour le champ File (CV) */
+input[type="file"] {
+    padding: 8px;
+    background: #f9fafb;
+    cursor: pointer;
+}
+
+.error-msg {
+    color: var(--error);
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
+button {
+    grid-column: span 2;
+    background: var(--primary);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: var(--primary-hover);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 640px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+    .full-width {
+        grid-column: span 1;
+    }
+    button {
+        grid-column: span 1;
+    }
+}
